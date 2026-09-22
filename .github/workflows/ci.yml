@@ -9,7 +9,7 @@ on:
 jobs:
   run-the-tests:
 
-    runs-on: MacOS-latest
+    runs-on: macOS-latest
 
     strategy:
       matrix:
