@@ -37,12 +37,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      
       - name: Run test with JUnit XML output
-        run: pytest ./tests/account_tests.py --junitxml=test-results/junit.xml
+        run: pytest ./tests/account_tests.py --junitxml=junit.xml
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action/macos@v2
         if (!cancelled())
         with:
-          files: results.xml
+          files: junit.xml
