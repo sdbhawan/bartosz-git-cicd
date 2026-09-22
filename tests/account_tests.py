@@ -44,4 +44,6 @@ def test_overdraw_savings():
         account.withdraw(100)
         assert account.balance == -50
     except ValueError:
-            pass
+        pass
+    else:
+        raise ValueError("Overdrawing a savings account should raise a ValueError")
