@@ -5,6 +5,7 @@ on:
       branches:
         - main
     pull_request:
+  workflow_dispatch:
 
 jobs:
   run-the-tests:
@@ -14,6 +15,12 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.12", "3.13", "3.14"]
+
+    print-matrix:
+      runs-on: macOS-latest
+      steps:
+        - name: Print matrix values
+          run: echo "Python version: ${{ matrix.python-version }}"
 
     permissions:
       checks: write
