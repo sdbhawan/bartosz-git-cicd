@@ -10,7 +10,7 @@ on:
 jobs:
   run-the-tests:
 
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -41,7 +41,7 @@ jobs:
         run: pytest ./tests/account_tests.py --junitxml=junit.xml
 
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action/macos@v2
+        uses: EnricoMi/publish-unit-test-result-action@v2
         if: (!cancelled())
         with:
           files: junit.xml

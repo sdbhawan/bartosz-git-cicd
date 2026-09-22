@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="4" time="0.143" timestamp="2026-09-22T15:09:20.773067+02:00" hostname="LAPTOP-OE7MPDS4"><testcase classname="tests.account_tests" name="test_deposit_checking" time="0.001" /><testcase classname="tests.account_tests" name="test_withdraw_checking" time="0.001" /><testcase classname="tests.account_tests" name="test_overdraw_checking" time="0.001" /><testcase classname="tests.account_tests" name="test_overdraw_savings" time="0.001"><failure message="ValueError: Cannot overdraw on a savings account">def test_overdraw_savings():
+        account = Account('savings')
+        account.deposit(50)
+&gt;       account.withdraw(100)
+
+tests\account_tests.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;account_tests.Account object at 0x00000191755528B0&gt;, amount = 100
+
+    def withdraw(self, amount: int):
+        if amount &gt; self._balance and self._account_type == 'savings':
+&gt;           raise ValueError('Cannot overdraw on a savings account')
+E           ValueError: Cannot overdraw on a savings account
+
+tests\account_tests.py:12: ValueError</failure></testcase></testsuite></testsuites>
