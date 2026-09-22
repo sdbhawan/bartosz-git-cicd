@@ -1,10 +1,11 @@
 name: Bartosz CI/CD pipeline
 
 on:
-    push:
-      branches:
-        - main
-    pull_request:
+  workflow_dispatch:
+      push:
+        branches:
+          - main
+      pull_request:
 
 jobs:
   run-the-tests:
